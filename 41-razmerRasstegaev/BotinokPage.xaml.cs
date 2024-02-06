@@ -20,6 +20,7 @@ namespace _41_razmerRasstegaev
     /// </summary>
     public partial class BotinokPage : Page
     {
+        //ihhiouiohiho
         public BotinokPage()
         {
             InitializeComponent();
