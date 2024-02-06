@@ -13,10 +13,10 @@ namespace _41_razmerRasstegaev
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Rasstegaev41ramzerEntities : DbContext
+    public partial class Rasstegaev41Entities : DbContext
     {
-        public Rasstegaev41ramzerEntities()
-            : base("name=Rasstegaev41ramzerEntities")
+        public Rasstegaev41Entities()
+            : base("name=Rasstegaev41Entities")
         {
         }
     
@@ -32,14 +32,13 @@ namespace _41_razmerRasstegaev
         public virtual DbSet<Role> Role { get; set; }
         public virtual DbSet<User> User { get; set; }
 
-        private static Rasstegaev41ramzerEntities _context;
+        private static Rasstegaev41Entities _context;
 
-        public static Rasstegaev41ramzerEntities GetContext()
+        public static Rasstegaev41Entities GetContext()
         {
             if (_context == null)
-            {
-                _context = new Rasstegaev41ramzerEntities();
-            }
+                _context = new Rasstegaev41Entities();
+
             return _context;
         }
     }

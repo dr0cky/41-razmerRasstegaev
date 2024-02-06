@@ -5,16 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_41_razmerRasstegaev"
         mc:Ignorable="d"
-        Title="41-razmerRasstegaev" Height="450" Width="800" Icon="res\icon.ico" FontFamily="Comic Sans MS" MinWidth="1500" MinHeight="750">
+        Title="41-razmerRasstegaev" Height="450" Width="800" Icon="res\icon.ico" FontFamily="Comic Sans MS" MinWidth="1100" MinHeight="750">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="75"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
         </Grid.RowDefinitions>
-        <Image Source="res\logo.png" HorizontalAlignment="Left"/>
-        <TextBlock Text="Botinok_Rasstegaeva" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-        <Frame Grid.Row="1" Name="MainFrame" ContentRendered="MainFrame_ContentRendered" NavigationUIVisibility="Hidden"/>
-        <Button Content="Назад" Name="BtnBack" Width="175" Height="30" HorizontalAlignment="Right" Margin="5" Click="BtnBack_Click"/>
+
+        <Image Source="res/logo.png" HorizontalAlignment="Left"/>
+
+        <TextBlock Text="41 Размер" FontFamily="Comic Sans MS" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <Button Content="Назад" Name = "BtnBack" Click="BtnBack_Click_1" HorizontalAlignment="Right"/>
+
+        <Frame Grid.Row="1" Name="MainFrame" NavigationUIVisibility="Hidden" ContentRendered="MainFrame_ContentRendered"/>
+
     </Grid>
 </Window>

@@ -43,5 +43,10 @@ namespace _41_razmerRasstegaev
                 BtnBack.Visibility = Visibility.Hidden;
             }
         }
+
+        private void BtnBack_Click_1(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.GoBack();
+        }
     }
 }

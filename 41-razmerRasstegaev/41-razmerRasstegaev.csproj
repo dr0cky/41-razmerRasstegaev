@@ -168,6 +168,16 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="photo\B320R5.jpg" />
+    <Resource Include="photo\D329H3.jpg" />
+    <Resource Include="photo\D572U8.jpg" />
+    <Resource Include="photo\F572H7.jpg" />
+    <Resource Include="photo\F635R4.jpg" />
+    <Resource Include="photo\G432E4.jpg" />
+    <Resource Include="photo\G783F5.jpg" />
+    <Resource Include="photo\H782T5.jpg" />
+    <Resource Include="photo\J384T6.jpg" />
+    <Resource Include="photo\А112Т4.jpg" />
     <Content Include="RasstegaevModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>RasstegaevModel.edmx</DependentUpon>
