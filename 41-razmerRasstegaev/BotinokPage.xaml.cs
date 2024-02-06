@@ -20,18 +20,86 @@ namespace _41_razmerRasstegaev
     /// </summary>
     public partial class BotinokPage : Page
     {
-        //ihhiouiohiho
+        List<Product> CurrentPageList = new List<Product>();
+        List<Product> TableList;
         public BotinokPage()
         {
             InitializeComponent();
 
             List<Product> currentProducts = Rasstegaev41Entities.GetContext().Product.ToList();
             ProductListView.ItemsSource = currentProducts;
+
+            ProdAll.Text = Convert.ToString(currentProducts.Count);
+
+            CostComboBox.SelectedIndex = 0;
+            DiscntComboBox.SelectedIndex = 0;
+
+            UpdateProduct();
         }
 
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
 
+        }
+
+        private void ProdSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            UpdateProduct();
+        }
+
+        private void CostComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            UpdateProduct();
+        }
+
+        private void DiscntComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            UpdateProduct();
+        }
+
+        private void UpdateProduct()
+        {
+            var currentProduct = Rasstegaev41Entities.GetContext().Product.ToList();
+
+            currentProduct = currentProduct.Where(p => p.ProductName.ToLower().Contains(ProdSearch.Text.ToLower())).ToList();
+
+            if (CostComboBox.SelectedIndex == 0)
+            {
+
+            }
+            else if (CostComboBox.SelectedIndex == 1)
+            {
+                currentProduct = currentProduct.OrderBy(p => p.ProductCost).ToList();
+            }
+            else if (CostComboBox.SelectedIndex == 2)
+            {
+                currentProduct = currentProduct.OrderByDescending(p => p.ProductCost).ToList();
+            }
+
+            if (DiscntComboBox.SelectedIndex == 0)
+            {
+
+            }
+            else if (DiscntComboBox.SelectedIndex == 1)
+            {
+                currentProduct = currentProduct.Where(p => (p.ProductDiscountAmount >= 0 && p.ProductDiscountAmount < 10)).ToList();
+            }
+            else if (DiscntComboBox.SelectedIndex == 2)
+            {
+                currentProduct = currentProduct.Where(p => (p.ProductDiscountAmount >= 10 && p.ProductDiscountAmount < 15)).ToList();
+            }
+            else if (DiscntComboBox.SelectedIndex == 3)
+            {
+                currentProduct = currentProduct.Where(p => (p.ProductDiscountAmount >= 15)).ToList();
+            }
+
+            ProdAtTheMoment.Text = Convert.ToString(currentProduct.Count);
+
+            ProductListView.ItemsSource = currentProduct;
+
+            TableList = currentProduct;
+
+            //ChangePage(0, 0);
         }
 
     }
