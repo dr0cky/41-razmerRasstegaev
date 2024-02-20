@@ -23,7 +23,7 @@ namespace _41_razmerRasstegaev
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.Navigate(new BotinokPage());
+            MainFrame.Navigate(new AuthPage());
             Manager.MainFrame = MainFrame;
         }
 
