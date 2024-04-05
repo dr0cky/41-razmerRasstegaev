@@ -73,6 +73,9 @@
     <Compile Include="OrderProduct.cs">
       <DependentUpon>RasstegaevModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="OrderWindow.xaml.cs">
+      <DependentUpon>OrderWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PickupPoint.cs">
       <DependentUpon>RasstegaevModel.tt</DependentUpon>
     </Compile>
@@ -130,6 +133,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="OrderWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Manager.cs" />
@@ -149,6 +156,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -167,9 +175,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="res\icon.ico" />
-    <Resource Include="res\logo.png" />
-    <Resource Include="res\picture.png" />
+    <Resource Include="photo\icon.ico" />
+    <Resource Include="photo\logo.png" />
+    <Resource Include="photo\picture.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -195,6 +203,9 @@
       <DependentUpon>RasstegaevModel.edmx</DependentUpon>
       <LastGenOutput>RasstegaevModel.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="res\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

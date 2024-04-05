@@ -32,7 +32,26 @@ namespace _41_razmerRasstegaev
         public int ProductQuantityInStock { get; set; }
         public string ProductDescription { get; set; }
         public string ProductImage { get; set; }
-    
+
+        public int Quantity { get; set; }
+
+        public int inStock
+        {
+            get
+            {
+
+                int stock = ProductQuantityInStock - Quantity;
+                if (stock < 0)
+                {
+                    return 0;
+                }
+                else
+                {
+                    return stock;
+                }
+            }
+        }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderProduct> OrderProduct { get; set; }
     }
