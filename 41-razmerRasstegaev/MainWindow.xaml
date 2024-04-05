@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_41_razmerRasstegaev"
         mc:Ignorable="d"
-        Title="41-razmerRasstegaev" Height="450" Width="800" Icon="photo\icon.ico" FontFamily="Comic Sans MS" MinWidth="1100" MinHeight="750">
+        Title="41-razmerRasstegaev" Height="450" Width="800" Icon="res\icon.ico" FontFamily="Comic Sans MS" MinWidth="1100" MinHeight="750">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="150"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="30"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <Image Source="photo/logo.png" HorizontalAlignment="Left"/>
+        <Image Source="res/logo.png" HorizontalAlignment="Left"/>
 
         <TextBlock Text="41 Размер" FontFamily="Comic Sans MS" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 

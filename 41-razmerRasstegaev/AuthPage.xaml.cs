@@ -27,8 +27,8 @@ namespace _41_razmerRasstegaev
 
         private async void LoginB_Click(object sender, RoutedEventArgs e)
         {
-            string login = ULogin.Text;
-            string password = UPassword.Text;
+            string login = Login.Text;
+            string password = Password.Text;
             if (login == "" || password == "")
             {
                 MessageBox.Show("Есть пустые поля");
@@ -40,23 +40,23 @@ namespace _41_razmerRasstegaev
             if (user != null)
             {
                 Manager.MainFrame.Navigate(new BotinokPage(user));
-                ULogin.Text = "";
-                UPassword.Text = "";
+                Login.Text = "";
+                Password.Text = "";
             }
             else
             {
                 MessageBox.Show("Введены неверные данные");
-                ULogin.IsEnabled = false;
+                LoginB.IsEnabled = false;
                 await Task.Delay(10000);
-                ULogin.IsEnabled = true;
+                LoginB.IsEnabled = true;
             }
         }
 
         private void GuestB_Click(object sender, RoutedEventArgs e)
         {
             Manager.MainFrame.Navigate(new BotinokPage(null));
-            ULogin.Text = "";
-            UPassword.Text = "";
+            Login.Text = "";
+            Password.Text = "";
         }
     }
 }
